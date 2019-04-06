@@ -80,11 +80,15 @@ ul {
 .hero {
   background-color: #50c5d2;
   padding: 1rem;
+  .content-container {
+    max-width: 375px;
+    margin: 0 auto;
+  }
   .background-image {
     display: none;
   }
   h2 {
-    @include h-size(40);
+    @include h-size(30);
     margin-bottom: 1.25rem;
     span {
       display: block;
@@ -102,9 +106,10 @@ ul {
   p {
     @include p-size(15);
     max-width: 465px;
-    margin-bottom: 5.25rem;
+    margin: 0 auto 5.25rem;
   }
   h3 {
+    @include h-size(15);
     border-bottom: 1px solid #222;
     padding-bottom: 5px;
   }
@@ -114,7 +119,7 @@ ul {
     position: relative;
     margin: 0 auto 6rem;
     p {
-      margin-bottom: 0;
+      margin: 0;
       max-width: 45%;
     }
     span {
@@ -153,7 +158,7 @@ ul {
   }
   p {
     @include p-size(15);
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     max-width: 465px;
   }
 }
@@ -248,7 +253,7 @@ ul {
   }
   p {
     @include p-size(15);
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     max-width: 465px;
   }
 }
@@ -275,6 +280,7 @@ ul {
   }
   span {
     text-transform: uppercase;
+    text-align: center;
     font-weight: 900;
     position: absolute;
     top: 50%;
@@ -312,14 +318,114 @@ ul {
 
 // 640
 @media only screen and (min-width: 640px) {
+  .grid-container.full.hero {
+    padding: 0;
+  }
+
+  .hero {
+    position: relative;
+    .background-image {
+      display: block;
+    }
+    .content-container {
+      position: absolute;
+      width: 50%;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .how-to {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  .drinks {
+    .content-wrapper {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .pleasure,
+  .locations {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    li {
+      width: 45%;
+    }
+  }
 }
 
 // 768
 @media only screen and (min-width: 768px) {
+  .orbit-bullets {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    button {
+      background-color: $white;
+    }
+  }
+  .hero .content-container {
+    max-width: 320px;
+  }
+  .how-to ul {
+    max-width: 775px;
+  }
+  .pleasure,
+  .locations {
+    li {
+      width: 24%;
+    }
+  }
 }
 
 // 1024
 @media only screen and (min-width: 1024px) {
+  .hero {
+    .content-container {
+      max-width: none;
+    }
+    h2 {
+      @include h-size(50);
+      margin-bottom: 50px;
+    }
+    p {
+      margin-bottom: 40px;
+      max-width: 380px;
+    }
+  }
+  .drinks {
+    position: relative;
+    h2 {
+      position: absolute;
+      top: 5rem;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 9;
+    }
+    .content-wrapper {
+      top: 30%;
+    }
+  }
 }
 
 //1200
