@@ -1,47 +1,50 @@
-# Foundation for Sites Template
+# UI Assessment Notes
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
+## Build plan
+  - The project was built using the Foundation 6 CLI, with the basic template as a starting point
+  - From here I started by building the general HTML structure
+  - Once the structure was in place, I began styling to match the design, with a mobile first approach
+    * Since there was no provided mobile design, I styled mobile up through tablet sizes as I saw fit
+    * Certain elements are hidden or rearranged in order to accommodate smaller mobile screens
+  - From mobile, I gradually scaled up through sizes and restyled elements as needed, up to desktop where I attmpted to match the provided design
+  - I kept all of my styles in a single file 'base.scss' and imported into the main 'app.scss' file
+    * Typically I would break up the styles into different imports for media queries or individual modules on larger projects, but I kept them all in one file this time
 
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+# Unfinished tasks
 
-## Installation
+## Overall
+  - The line-heights, font-sizes, and general spacing between elements needs to be tightened up a bit to match the design
+  - The correct matching font should be added, I found a very close match on Typekit, but I don't think it's exact
 
-To use this template, your computer needs:
+## Site Header
+  - I added a placeholder for the header and intended on revisiting it to add the content from the design
+  - For the mobile header I would have:
+    * Reduced the logo to the mark, centered
+    * Log in on the left, basket icon on the right
+    * Removed the photo in the megamenu (only display on larger screens with enough room)
+    * Collapsed the rest of the nav into expandable items
+  - Make the header sticky
 
-- [NodeJS](https://nodejs.org/en/) (0.12 or greater)
-- [Git](https://git-scm.com/)
+## Buy it by the box
+  - The smaller text below the main description needs to be fixed, on desktop it's wrapping
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
+## Drinks
+  - The paragraph text is currently too wide on desktop
+  - The section header font-size needs to be bigger
 
-### Using the CLI
+## Pick your pleasure
+  - The paragraph text is too wide, needs to wrap on desktop
+  - Spacing between the drink images is a bit too small
 
-Install the Foundation CLI with this command:
+## Cleanse
+  - I would have added the background photo similar to how I did in the top hero section
 
-```bash
-npm install foundation-cli --global
-```
+## Locations
+  - Spacing between the location images is a bit too small
+  - "View store details" text shouldn't wrap on desktop
 
-Use this command to set up a blank Foundation for Sites project with this template:
-
-```bash
-foundation new --framework sites --template basic
-```
-
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-sites-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-npm install
-```
-
-Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
+## Site Footer
+  - This is completely missing, I have the beginning of a placeholder but didn't get to add content
+  - On mobile, I would have let the content stack
+    * If possible, "Company" and "Help" look like they could go side-by-side with "Social" below
+  - On mobile, I would have stacked the "email address" field and submit button, made the button full width with the field
